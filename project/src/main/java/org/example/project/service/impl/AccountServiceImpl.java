@@ -45,6 +45,9 @@ public class AccountServiceImpl implements AccountService {
         dto.setId(account.getId());
         dto.setAccountNumber(account.getAccountNumber());
         dto.setBalance(account.getBalance());
+        User user = account.getUser();
+        UserDTO userDTO = new UserDTO(user.getId(), user.getUsername(), user.getFirstName(), user.getLastName(), user.getAddress());
+        dto.setUserDto(userDTO);
         return dto;
     }
 
